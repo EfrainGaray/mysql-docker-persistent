@@ -21,7 +21,7 @@ brew install docker
 ## Creacion de la instancia
 
 
-
+## Mac o Linux
 ```bash
 > git clone https://github.com/EfrainGaray/mysql-docker-persistent.git
 > cd .\mysql-docker-persistent\
@@ -29,6 +29,15 @@ brew install docker
 > docker run --name mysql -e MYSQL_ROOT_PASSWORD=TUPASSWORD -d -p 3306:3306 -v mysql-db-data:/var/lib/mysql -v $PWD/:/etc/mysql/conf.d  mysql/mysql-server:latest
 
 ```
+## Windows
+```bash
+> git clone https://github.com/EfrainGaray/mysql-docker-persistent.git
+> cd .\mysql-docker-persistent\
+> docker volume create mysql-db-data
+>  docker run --name mysql -e MYSQL_ROOT_PASSWORD=TUPASSWORD -d -p 3306:3306 -v mysql-db-data:/var/lib/mysql -v %cd%/:/etc/mysql/conf.d  mysql/mysql-server:latest
+
+```
+
 Si todo salio bien ya tienes creada tu imagen MySql solo nos falta dar permiso al usuario root para que podamos ingresar desde nuestro IDEfavorito.
 
 ```bash
